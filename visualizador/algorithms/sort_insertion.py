@@ -10,7 +10,7 @@ def init(vals):
     items = list(vals)
     n = len(items)
     i = 1      # común: arrancar en el segundo elemento
-    j = None
+    j = None   # aún no hay desplazamiento
 
 def step():
     # TODO:
@@ -21,10 +21,12 @@ def step():
     # - Si j es None: empezar desplazamiento para el items[i] (p.ej., j = i) y devolver un highlight sin swap.
     if j is None:
         j=i 
-        return{"i":i,"j":j,"swap":False,"done":False}
+        return{"a":j,"b":j,"swap":False,"done":False}
     # - Mientras j > 0 y items[j-1] > items[j]: hacer UN swap adyacente (j-1, j) y devolverlo con swap=True.
     if j>0 and items[j-1]:
-        items[j-1], items[j]= items[j], items[j-1]
+        a= j-1
+        b=j 
+        items[a], items[b]= items[b], items[a]
         j=j-1
         return {"i": i, "j": j, "swap": True, "done": False}
     
