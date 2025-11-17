@@ -23,7 +23,7 @@ def step():
         j=i 
         return{"a":j,"b":j,"swap":False,"done":False}
     # - Mientras j > 0 y items[j-1] > items[j]: hacer UN swap adyacente (j-1, j) y devolverlo con swap=True.
-    if j>0 and items[j-1]:
+    if j>0 and items[j-1] > items[j]: #Habia escrito mal la condicional, colocando solamente el items[j-1]
         a= j-1
         b=j 
         items[a], items[b]= items[b], items[a]
