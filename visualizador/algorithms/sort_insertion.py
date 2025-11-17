@@ -28,9 +28,13 @@ def step():
         b=j 
         items[a], items[b]= items[b], items[a]
         j=j-1
-        return {"i": i, "j": j, "swap": True, "done": False}
-    
+        return {"a": a, "b": b, "swap": True, "done": False}
     # - Si ya no hay que desplazar: avanzar i y setear j=None.
-    i = i + 1
-    j = None
-    return {"i": i, "j": j, "swap": False, "done": False}
+    a=j
+    b=j
+    i+=1
+    j= None
+    if i >=n:
+        return {"done": True}
+    
+    return {"a": a, "b": b, "swap":False, "done": False}
