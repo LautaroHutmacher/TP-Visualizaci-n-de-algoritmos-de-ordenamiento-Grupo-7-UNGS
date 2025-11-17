@@ -14,7 +14,7 @@ def init(vals):
 
 def step():
     # TODO:
-
+    global items, n, i, j
     # - Si i >= n: devolver {"done": True}.
     if i>= n:
         return {"swap": False, "done":True} 
